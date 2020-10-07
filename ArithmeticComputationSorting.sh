@@ -20,8 +20,11 @@
    computation[$result1]=$result1
    computation[$result2]=$result2
    computation[$result3]=$result3
-   
-
+   #transfering values to array
+   for i in `echo "${!computation[@]}"`
+   do
+      sorting[$i]=$((computation[$i]))
+   done 
 
 
 
