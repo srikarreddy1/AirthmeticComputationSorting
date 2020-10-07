@@ -9,5 +9,10 @@
    #compute a*b+c
    result1=$(($a*$b+$c))
    echo "$result1"
+   #compute C+a/b 
+   result2=$((c+a/b))
+   echo "$result2"
+   
+
    
 
