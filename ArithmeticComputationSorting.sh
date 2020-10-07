@@ -14,5 +14,14 @@
    echo "$result2"
    result3=$(($a%$b+$c))
    echo "$result3"
+   #declare a dictionary and store results in it 
+   declare -A computation
+   computation[$result]=$result
+   computation[$result1]=$result1
+   computation[$result2]=$result2
+   computation[$result3]=$result3
+   
+
+
 
 
