@@ -16,15 +16,34 @@
    echo "$result3"
    #declare a dictionary and store results in it 
    declare -A computation
-   computation[$result]=$result
-   computation[$result1]=$result1
-   computation[$result2]=$result2
-   computation[$result3]=$result3
+   computation[result]=$result
+   computation[result1]=$result1
+   computation[result2]=$result2
+   computation[result3]=$result3
    #transfering values to array
+   j=0
    for i in `echo "${!computation[@]}"`
    do
-      sorting[$i]=$((computation[$i]))
-   done 
+      sorting[$j]=$((computation[$i]))
+      j=$(($j+1))
+   done
+   #sorting the values in the ascending order
+   for (( counter=3; counter!=0; counter-- ));
+   do
+   for (( j=0; j<$counter; j++ ));
+   do
+   if [[ ${sorting[j]} -gt ${sorting[counter]} ]]
+      then
+      temp=$(( ${sorting[counter]} ))
+      sorting[counter]=${sorting[j]}
+      sorting[j]=$temp
+   fi
+   done
+   done
+   echo ${sorting[@]}
+
+
+ 
 
 
 
